@@ -1,11 +1,10 @@
-const User = require('../models/User');
-const Thought = require('../models/Thought');
+const { User, Thought } = require('../models');
+// const Thought = require('../models/Thought');
 
 const userController = {
   async getUsers(req, res) {
     try {
       const users = await User.find();
-
       res.json(users);
     } catch (err) {
       console.log(err);
