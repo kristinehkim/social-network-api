@@ -2,6 +2,7 @@
 const { Thought, User } = require('../models');
 
 const thoughtController = {
+    // Get all thoughts
     async getThoughts(req, res) {
         try {
             const thoughts = await Thought.find();
@@ -10,6 +11,7 @@ const thoughtController = {
             res.status(500).json(err);
         }
     },
+    // Get a single thought
     async getSingleThought(req, res) {
         try {
             const thought = await Thought.findOne({ _id: req.params.thoughtId }).select('-__v');
@@ -23,6 +25,7 @@ const thoughtController = {
             res.status(500).json(err);
         }
     },
+    // Create a new thought
     async createThought(req, res) {
         try {
             const thought = await Thought.create(req.body);
