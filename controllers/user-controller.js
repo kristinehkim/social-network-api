@@ -1,5 +1,4 @@
 const { User, Thought } = require('../models');
-// const Thought = require('../models/Thought');
 
 const userController = {
   // Get all users
@@ -16,11 +15,12 @@ const userController = {
   async getSingleUser(req, res) {
     try {
       const user = await User.findOne({ _id: req.params.userId })
-        .select('-__v'); //this part?
+        .select('-__v');
 
       if (!user) {
         return res.status(404).json({ message: 'No user with that ID' });
       }
+
       res.json(user);
     } catch (err) {
       console.log(err);
@@ -37,7 +37,7 @@ const userController = {
       res.status(500).json(err);
     }
   },
-  // Delete a user
+  // Delete a user and associated thoughts
   async deleteUser(req, res) {
     try {
       const user = await User.findOneAndDelete({ _id: req.params.userId });
@@ -48,18 +48,6 @@ const userController = {
 
       await Thought.deleteMany({ _id: { $in: user.thoughts} });
       res.json({ message: 'User and thoughts deleted!' });
-        // { users: req.params.userId },
-        // { $pull: { users: req.params.userId } },
-        // { new: true }
-      // )
-
-      // if (!thought) {
-      //   return res.status(404).json({
-      //     message: 'User deleted, but no thoughts found',
-      //   });
-      // }
-
-      // res.json({ message: 'User successfully deleted'});
     } catch (err) {
       return res.status(500).json(err);
     }
@@ -76,6 +64,7 @@ const userController = {
       if (!user) {
         res.status(404).json({ message: 'No user with this ID' });
       }
+
       res.json(user);
     } catch (err) {
       res.status(500).json(err);

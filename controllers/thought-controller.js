@@ -1,4 +1,3 @@
-// const User = require('../models/User');
 const { Thought, User } = require('../models');
 const reactionSchema = require('../models/Reaction');
 
@@ -113,6 +112,7 @@ const thoughtController = {
                     .status(404)
                     .json({ message: 'No thought found with that ID' });
             }
+
             res.json(thought);
         } catch (err) {
             res.status(500).json(err);
