@@ -1,6 +1,6 @@
 # Social Network API
 > This is a social network web application where users can be created and they can share their thoughts, react to friends' thoughts, and create a friend list.  This application is using Express.js for routing, a MongoDB database, and the Mongoose ODM.
-> Walkthrough Video [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> Walkthrough Video [_here_](https://drive.google.com/file/d/1PaZ6Fm5h5d2_Abd7AyYDrz7KoHE2IzUH/view). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
 * [General Info](#general-information)

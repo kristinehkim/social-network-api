@@ -15,7 +15,9 @@ const userController = {
   async getSingleUser(req, res) {
     try {
       const user = await User.findOne({ _id: req.params.userId })
-        .select('-__v');
+        .select('-__v')
+        .populate('friends')
+        .populate('thoughts');
 
       if (!user) {
         return res.status(404).json({ message: 'No user with that ID' });
@@ -72,8 +74,6 @@ const userController = {
   },
   // Add a friend to user's friend list
   async addFriend(req, res) {
-    console.log('You are adding a new friend');
-    console.log(req.body);
 
     try {
       const user = await User.findOneAndUpdate(
