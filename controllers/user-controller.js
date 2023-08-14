@@ -48,7 +48,7 @@ const userController = {
         return res.status(404).json({ message: 'No such user exists' });
       }
 
-      await Thought.deleteMany({ _id: { $in: user.thoughts} });
+      await Thought.deleteMany({ _id: { $in: user.thoughts } });
       res.json({ message: 'User and thoughts deleted!' });
     } catch (err) {
       return res.status(500).json(err);
@@ -84,8 +84,8 @@ const userController = {
 
       if (!user) {
         return res
-        .status(404)
-        .json({ message: 'No user found with that ID' });
+          .status(404)
+          .json({ message: 'No user found with that ID' });
       }
 
       res.json(user);
@@ -105,12 +105,12 @@ const userController = {
 
       if (!user) {
         return res
-        .status(404)
-        .json({ message: 'No user found with this ID' });
+          .status(404)
+          .json({ message: 'No user found with this ID' });
       }
 
       res.json(user);
-    } catch(err) {
+    } catch (err) {
       res.status(500).json(err);
     }
   },
