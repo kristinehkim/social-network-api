@@ -10,7 +10,6 @@
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 <!-- * [License](#license) -->
@@ -51,7 +50,7 @@ In order to get set up for this app, `npm i` to install all the packages and dep
 
 ## Usage
 
-`npm i`
+`npm i` to download all dependencies and devdependencies
 
 `npm run dev` to start Nodemon or `npm run start`
 
