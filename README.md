@@ -41,10 +41,6 @@ List the ready features here:
 
 
 ## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
-
 In order to get set up for this app, `npm i` to install all the packages and dependencies and `npm run dev` to invoke the application and start the server using Nodemon or `npm run start`.  Insomnia was used to test all the routes.
 
 
